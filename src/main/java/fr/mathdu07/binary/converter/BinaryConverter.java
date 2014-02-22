@@ -3,8 +3,6 @@ package fr.mathdu07.binary.converter;
 import java.lang.System;
 
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
 
 public class BinaryConverter
 {
@@ -35,16 +33,6 @@ public class BinaryConverter
             add(applet);
             applet.init();
             applet.start();
-            
-            try
-            {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                SwingUtilities.updateComponentTreeUI(this);
-            }
-            catch(Exception e)
-            {
-                e.printStackTrace();
-            }
             
             this.setDefaultCloseOperation(EXIT_ON_CLOSE);
             this.setSize(420, 300);
