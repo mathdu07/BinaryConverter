@@ -3,6 +3,7 @@ package fr.mathdu07.binary.converter;
 import java.lang.System;
 
 import javax.swing.JFrame;
+import javax.swing.JProgressBar;
 
 public class BinaryConverter
 {
@@ -29,10 +30,17 @@ public class BinaryConverter
 
         public ConverterApplication() {
             super("Convertisseur Binaire");
+            
+            final JProgressBar loading = new JProgressBar();
+            loading.setString("Lancement de l'applet");
+            loading.setIndeterminate(true);
+            add(loading);
+            
             applet = new ConverterApplet();
-            add(applet);
             applet.init();
             applet.start();
+            remove(loading);
+            add(applet);
             
             this.setDefaultCloseOperation(EXIT_ON_CLOSE);
             this.setResizable(false);
