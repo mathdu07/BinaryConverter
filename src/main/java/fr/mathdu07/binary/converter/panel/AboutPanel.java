@@ -43,7 +43,7 @@ public class AboutPanel extends JPanel
     private String readAbout(InputStream is) throws IOException
     {
         String str = new String();
-        byte[] buffer = new byte[8];
+        byte[] buffer = new byte[16];
         
         while (is.read(buffer) != -1)
             str += new String(buffer, "utf8");
