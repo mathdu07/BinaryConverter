@@ -8,7 +8,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import fr.mathdu07.binary.converter.panel.AboutPanel;
-import fr.mathdu07.binary.converter.panel.AsciiPanel;
+import fr.mathdu07.binary.converter.panel.StringPanel;
 
 public class ConverterApplet extends JApplet
 {
@@ -35,7 +35,7 @@ public class ConverterApplet extends JApplet
     private void buildApplet()
     {
         tabs = new JTabbedPane();
-        tabs.addTab("ASCII", new AsciiPanel());
+        tabs.addTab("Texte", new StringPanel());
         tabs.addTab("À propos", new AboutPanel());
         setLayout(new BorderLayout());
         add(tabs, BorderLayout.CENTER);
