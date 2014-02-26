@@ -30,6 +30,38 @@ public class BitTest
     }
     
     @Test
+    public void testShortToBits()
+    {
+    	short s0 = 0, s1 = 1254, s2 = -652;
+    	Bit[] bits0 = Bit.shortToBits(s0), bits1 = Bit.shortToBits(s1), bits2 = Bit.shortToBits(s2);
+    	
+    	assertEquals("0000000000000000", Bit.bitsToString(bits0));
+    	assertEquals("0000010011100110", Bit.bitsToString(bits1));
+    	assertEquals("1111110101110100", Bit.bitsToString(bits2));
+    }
+    
+    @Test
+    public void testIntToBits()
+    {
+    	int i0 = 454364810, i1 = -145345, i2 = 25439;
+    	
+    	assertEquals("00011011000101010000111010001010", Bit.bitsToString(Bit.intToBits(i0)));
+    	assertEquals("11111111111111011100100000111111", Bit.bitsToString(Bit.intToBits(i1)));
+    	assertEquals("00000000000000000110001101011111", Bit.bitsToString(Bit.intToBits(i2)));
+    }
+    
+    @Test
+    public void testLongToBits()
+    {
+    	long l0 = 8526841, l1 = -584654145156641120l, l2 = 95614514513115l;
+    	
+    	System.out.println(Long.toBinaryString(l2));
+    	assertEquals("0000000000000000000000000000000000000000100000100001101111111001", Bit.bitsToString(Bit.longToBits(l0)));
+    	assertEquals("1111011111100010111001000010011100010001011110101000111010100000", Bit.bitsToString(Bit.longToBits(l1)));
+    	assertEquals("0000000000000000010101101111010111111101001011000100010011011011", Bit.bitsToString(Bit.longToBits(l2)));
+    }
+    
+    @Test
     public void testBitsToString()
     {
         Bit[] b = new Bit[] {Bit.ZERO, Bit.ZERO, Bit.ZERO, Bit.ONE, Bit.ONE, Bit.ZERO, Bit.ONE, Bit.ONE};
@@ -48,6 +80,13 @@ public class BitTest
         assertTrue(Bit.equals(b0, b1));
         assertFalse(Bit.equals(b0, b2));
         assertFalse(Bit.equals(b0, b3));
+    }
+    
+    @Test
+    public void testToByte()
+    {
+    	assertTrue(Bit.ZERO.toByte() == 0);
+    	assertTrue(Bit.ONE.toByte() == 1);
     }
 
 }
