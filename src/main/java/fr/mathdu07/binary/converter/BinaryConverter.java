@@ -44,7 +44,7 @@ public class BinaryConverter
             
             this.setDefaultCloseOperation(EXIT_ON_CLOSE);
             this.setResizable(false);
-            this.setSize(400, 300);
+            this.setSize(400, 325);
             this.setVisible(true);
         }
     }
