@@ -24,12 +24,8 @@ public class ConverterApplet extends JApplet
     public void init()
     {
         super.init();
-        SwingUtilities.invokeLater(new Runnable() {
-        	public void run()
-        	{
-        		buildApplet();
-        	}
-        });
+        
+        buildApplet();
     }
     
     private void buildApplet()
